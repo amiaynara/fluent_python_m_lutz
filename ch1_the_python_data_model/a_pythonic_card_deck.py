@@ -6,11 +6,11 @@ Card = collections.namedtuple('Card', ['rank', 'suit'])
 
 class FrenchDeck():
   '''What is a french deck?'''
-
+  ranks = list(range(2,11)) + list('AJKQ')
+  suits = ['heart', 'spade', 'club', 'diamond'] # any FrenchDeck will have these two, as constants, 
+                                                # therefore these are class attributes
   def __init__(self):
     '''The constructor for french deck'''
-    self.ranks = list(range(2,10)) + list('AJKQ')
-    self.suits = ['heart', 'spade', 'club', 'diamond']
     self.deck = [Card(rank, suit) for rank in self.ranks for suit in self.suits]
 
   def get_card(self):
